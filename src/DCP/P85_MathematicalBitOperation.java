@@ -16,42 +16,11 @@ public class P85_MathematicalBitOperation
     {
         int x = 12;
         int y = 78;
-        int b = 1;
-//        System.out.println(getB(x, y, b));
-b();
+        int b = 0;
+        System.out.println(getB(x, y, b));
     }
     private static int getB(int x, int y, int b)
     {
-        return b&x | b^y;
-    }
-    private static void b()
-    {
-        int a = 23; 
-        int b = 21;
-        int c = 0;
-  
-        // bitwise and 
-        // 0101 & 0111=0101 = 5 
-        System.out.println("a&b = " + (a & b)); 
-  
-        // bitwise or 
-        // 0101 | 0111=0111 = 7 
-        System.out.println("a|b = " + (a | b)); 
-  
-        // bitwise xor 
-        // 0101 ^ 0111=0010 = 2 
-        System.out.println("a^b = " + (a ^ b)); 
-  
-        // bitwise and 
-        // ~0101=1010 
-        // will give 2's complement of 1010 = -6 
-        System.out.println("~a = " + ~a); 
-  
-        // can also be combined with 
-        // assignment operator to provide shorthand 
-        // assignment 
-        // a=a&b 
-        a &= b; 
-        System.out.println("a= " + a); 
+        return x*b + y*(1-b);
     }
 }
