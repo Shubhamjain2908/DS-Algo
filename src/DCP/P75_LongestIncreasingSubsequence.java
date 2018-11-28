@@ -6,6 +6,7 @@
 package DCP;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -21,7 +22,33 @@ public class P75_LongestIncreasingSubsequence
         int[] arr = {0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15};
         int[] arr2 = {10, 22, 9, 33, 21, 50, 41, 60};
         P75_LongestIncreasingSubsequence p = new P75_LongestIncreasingSubsequence();
-        System.out.println(p.getLongest(arr));
+        System.out.println(p.longest_increasing_subsequence(arr));
+        System.out.println(p.longest_increasing_subsequence(arr2));
+    }
+    
+    // Using DP O(n^2)
+    private int longest_increasing_subsequence(int[] arr)
+    {
+        int n = arr.length;
+        if (n == 0) {
+            return 0;
+        }
+        int[] cache = new int[n+1];
+        Arrays.fill(cache, 1);
+        int max = 1;
+        for (int i = 1; i < n; i++) 
+        {
+            for (int j = 0; j < i; j++) 
+            {
+                if (arr[i] > arr[j]) {
+                    cache[i] = Math.max(cache[i], cache[j] + 1);
+                }
+                if (cache[i] > max) {
+                    max = cache[i];
+                }
+            }
+        }
+        return max;
     }
     
     // Brute Force, O(2^n * n)
