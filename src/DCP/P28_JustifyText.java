@@ -6,6 +6,7 @@
 package DCP;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -27,13 +28,23 @@ public class P28_JustifyText
     }
     public static void printJustifyText(String[] arr, int k) 
     {
-        List<Integer> list = new ArrayList<>();
-        for (String arr1 : arr) {
-            list.add(arr1.length());
-        }
-        for (int i = 0; i < list.size()-1; i++) 
+        List<String> list = new ArrayList<>();
+        list.addAll(Arrays.asList(arr));
+        while(!list.isEmpty())
         {
-            
+            String str = "";
+            if (str.length() < 16 && str.length() + list.get(0).length() + 1 <= 16) {
+                for (int i = 0; i < arr.length; i++) 
+                {
+                    str += list.get(0) + " ";
+                    list.remove(0);
+                }
+            }
+            System.out.println(str);
         }
+    }
+    private static void dp()
+    {
+        
     }
 }
