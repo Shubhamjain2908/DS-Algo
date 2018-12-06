@@ -5,12 +5,6 @@
  */
 package DCP_2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * Square
  * @author SHUBHAM
@@ -24,49 +18,7 @@ public class P103_ShortestSubstringWithChar
     {
         String str = "figehaeci";
         char[] arr = {'a','e','i'};
-        //System.out.println(getSub(str, arr));
         System.out.println(findSubString(str, new String(arr)));
-    }
-    private static String getSub(String str, char[] arr)
-    {
-        if (str.length() < arr.length) 
-        {
-            return null;
-        }
-        String sub = "";
-        Map<Character, Integer> pat = new HashMap<>();
-        for (int i = 0; i < arr.length; i++) {
-            char c = arr[i];
-            if (pat.containsKey(c)) 
-            {
-                pat.put(c, pat.get(c) + 1);
-            } 
-            else
-            {
-                pat.put(c, 1);
-            }
-        }
-        Map<Character, List<Integer>> map = new HashMap<>();
-        Map<Character, List<Integer>> map2 = new HashMap<>();
-        for (int i = 0; i < str.length(); i++) 
-        {
-            char c = str.charAt(i);
-            List<Integer> l = new ArrayList<>();
-            if (map.containsKey(c)) {
-                l.addAll(map.get(c));
-            }
-            l.add(i);
-            map.put(c, l);
-        }
-        for (int i = 0; i < arr.length; i++) 
-        {
-            map2.put(arr[i], map.get(arr[i]));
-        }
-        map2.entrySet().forEach(e->{
-            System.out.print(e.getKey() + " -> " );
-            System.out.println(e.getValue());
-        });
-        return sub;
     }
     static final int no_of_chars = 256; 
       
