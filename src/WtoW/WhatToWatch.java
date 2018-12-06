@@ -14,7 +14,12 @@ import java.util.Random;
 public class WhatToWatch {
     public static void main(String[] args) 
     {
-        String wTow = getSeason();
+        String wTow;
+        LRUCache l = new LRUCache();
+        do
+        {
+            wTow = getSeason();
+        } while(l.shouldWatch(wTow));
         System.out.println("You should watch : "+ wTow);
     }
     private static String getSeason()

@@ -30,7 +30,7 @@ public class P101_2PrimeNoSum
 {
     public static void main(String[] args) 
     {
-        Arrays.toString(getPrime(4));
+        System.out.println(Arrays.toString(getPrime(52)));
     }
     private static int[] getPrime(int n) 
     {
