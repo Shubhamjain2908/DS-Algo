@@ -5,10 +5,6 @@
  */
 package DCP_2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * Google
  * @author SHUBHAM
@@ -21,13 +17,7 @@ public class P111_AnagramIndices
     {
         String S = "abxaba";
         String W = "ab"; 
-        System.out.println(getIndices(S, W));
         search(W, S);
-    }
-    private static List<Integer> getIndices(String S, String W)
-    {
-        List<Integer> index = new ArrayList<>();
-        return index;
     }
     static boolean compare(char arr1[], char arr2[]) 
     {
@@ -80,6 +70,5 @@ public class P111_AnagramIndices
             System.out.println("Found at Index " +  
                                        (N - M)); 
         
-    } 
-
+    }
 }
