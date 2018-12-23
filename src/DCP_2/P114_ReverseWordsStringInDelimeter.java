@@ -23,19 +23,16 @@ public class P114_ReverseWordsStringInDelimeter
         String[] del2 = {"//", ":"};
         System.out.println(reverse(str2, del2));
     }
-    private static String reverse(String sw, String[] del)
+    private static String reverse(String str, String[] del)
     {
-        int j = 0;
-        for (String del1 : del)
-            sw = sw.replace(del1, " ");
         String rev = "";
-        String s[] = sw.split(" ");
-        for (int i = s.length-1; i >= 0; i--) 
-        {
+        for (String d : del)
+            str = str.replaceFirst(d, " ");
+        String s[] = str.split(" ");
+        for (int i = s.length-1; i >= 0; i--)
             rev += s[i] + " ";
-        }
-        for (String del1 : del)
-            rev = rev.replaceFirst(" ", del1);
+        for (String d : del)
+            rev = rev.replaceFirst(" ", d);
         return rev;
     }
 }
