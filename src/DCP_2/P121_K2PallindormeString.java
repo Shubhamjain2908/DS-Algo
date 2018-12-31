@@ -5,8 +5,6 @@
  */
 package DCP_2;
 
-import java.util.Arrays;
-
 /**
  * Google
  * @author SHUBHAM
@@ -17,7 +15,7 @@ public class P121_K2PallindormeString
 {
     public static void main(String[] args) 
     {
-        String s = "waterrfetawx78";
+        String s = "waterrfetawx";
         int k = 2;
         System.out.println(canPallin(s, k));
     }
@@ -49,9 +47,6 @@ public class P121_K2PallindormeString
                 }
             }
         }
-//        for (int[] lc : lcs) {
-//            System.out.println(Arrays.toString(lc));
-//        }
         return lcs[n][m];
     }
 }
